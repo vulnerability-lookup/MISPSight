@@ -45,11 +45,10 @@ Query completed successfully.
 Pushing sightings to Vulnerability Lookup...
 ```
 
-
+[https://github.com/MISP/VulnerabilityLookupSighting](https://github.com/MISP/VulnerabilityLookupSighting)
 
 ## License
-
-[FediVuln](https://github.com/CIRCL/FediVuln) is licensed under
+[Vulnerability-Lookup Sighting](https://github.com/MISP/VulnerabilityLookupSighting) is licensed under
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html)
 
 ~~~
