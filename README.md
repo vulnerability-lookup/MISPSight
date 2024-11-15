@@ -6,9 +6,8 @@ A client that retrieves vulnerability observations from a [MISP](https://github.
 Similar to [FediVuln](https://github.com/CIRCL/FediVuln) which is using the Fediverse as a source of observations.
 
 
-## Usage
+## Installation
 
-### Installation
 
 [pipx](https://github.com/pypa/pipx) is an easy way to install and run Python applications in isolated environments.
 It's easy to [install](https://github.com/pypa/pipx?tab=readme-ov-file#on-linux).
@@ -23,7 +22,7 @@ The configuration should be defined in a Python file (e.g., ``~/.conf.py``).
 You must then set an environment variable (``VulnerabilityLookupSighting``) with the full path to this file.
 
 
-### Usage
+## Usage
 
 ```bash
 $ VulnerabilityLookupSighting --help
@@ -47,7 +46,9 @@ Pushing sightings to Vulnerability Lookup...
 
 [https://github.com/MISP/VulnerabilityLookupSighting](https://github.com/MISP/VulnerabilityLookupSighting)
 
+
 ## License
+
 [Vulnerability-Lookup Sighting](https://github.com/MISP/VulnerabilityLookupSighting) is licensed under
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html)
 
