@@ -32,7 +32,8 @@ VulnerabilityLookupSighting = "vulnerabilitylookupsighting.publish:main"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pymisp = "^2.5.1"
+pymisp = "^2.5.2"
+pyvulnerabilitylookup = "^2.1.0"
 
 
 [build-system]
