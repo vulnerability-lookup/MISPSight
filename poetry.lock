@@ -127,20 +127,20 @@ files = [
 
 [[package]]
 name = "deprecated"
-version = "1.2.14"
+version = "1.2.15"
 description = "Python @deprecated decorator to deprecate old python classes, functions or methods."
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
 files = [
-    {file = "Deprecated-1.2.14-py2.py3-none-any.whl", hash = "sha256:6fac8b097794a90302bdbb17b9b815e732d3c4720583ff1b198499d78470466c"},
-    {file = "Deprecated-1.2.14.tar.gz", hash = "sha256:e5323eb936458dccc2582dc6f9c322c852a775a27065ff2b0c4970b9d53d01b3"},
+    {file = "Deprecated-1.2.15-py2.py3-none-any.whl", hash = "sha256:353bc4a8ac4bfc96800ddab349d89c25dec1079f65fd53acdcc1e0b975b21320"},
+    {file = "deprecated-1.2.15.tar.gz", hash = "sha256:683e561a90de76239796e6b6feac66b99030d2dd3fcf61ef996330f14bbb9b0d"},
 ]
 
 [package.dependencies]
 wrapt = ">=1.10,<2"
 
 [package.extras]
-dev = ["PyTest", "PyTest-Cov", "bump2version (<1)", "sphinx (<2)", "tox"]
+dev = ["PyTest", "PyTest-Cov", "bump2version (<1)", "jinja2 (>=3.0.3,<3.1.0)", "setuptools", "sphinx (<2)", "tox"]
 
 [[package]]
 name = "idna"
@@ -173,25 +173,25 @@ update = ["requests"]
 
 [[package]]
 name = "pymisp"
-version = "2.5.1"
+version = "2.5.2"
 description = "Python API for MISP."
 optional = false
-python-versions = "<4.0,>=3.8"
+python-versions = "<4.0,>=3.9"
 files = [
-    {file = "pymisp-2.5.1-py3-none-any.whl", hash = "sha256:29afd529b1e18ebf7a242c68ab240561dbf5b706d11612d75fc692413fd92990"},
-    {file = "pymisp-2.5.1.tar.gz", hash = "sha256:8aa3aa9e8ad9d9eb7a31e8ad5c07741855d4bac6efa65d83ea6a62689efae2c2"},
+    {file = "pymisp-2.5.2-py3-none-any.whl", hash = "sha256:bcce077f8ccbe73958d47c778b30d7a9b2fb4b249cba2e3188a06df5be6cd2e1"},
+    {file = "pymisp-2.5.2.tar.gz", hash = "sha256:ca512c9754ad962be30dcef265da9f194835d70414935440abe5b0485a2b0109"},
 ]
 
 [package.dependencies]
-deprecated = ">=1.2.14,<2.0.0"
-publicsuffixlist = ">=1.0.2.20241017,<2.0.0.0"
+deprecated = ">=1.2.15,<2.0.0"
+publicsuffixlist = ">=1.0.2.20241113,<2.0.0.0"
 python-dateutil = ">=2.9.0.post0,<3.0.0"
 requests = ">=2.32.3,<3.0.0"
 
 [package.extras]
 brotli = ["urllib3[brotli]"]
 docs = ["Sphinx (>=8,<9)", "docutils (>=0.21.1,<0.22.0)", "recommonmark (>=0.7.1,<0.8.0)", "sphinx-autodoc-typehints (>=2.5.0,<3.0.0)"]
-email = ["RTFDE (>=0.1.1,<0.2.0)", "extract_msg (>=0.51,<0.52)", "oletools (>=0.60.1,<0.61.0)"]
+email = ["RTFDE (>=0.1.1,<0.2.0)", "extract_msg (>=0.52,<0.53)", "oletools (>=0.60.1,<0.61.0)"]
 fileobjects = ["lief (>=0.15.0,<0.16.0)", "pydeep2 (>=0.5.1,<0.6.0)", "python-magic (>=0.4.27,<0.5.0)"]
 openioc = ["beautifulsoup4 (>=4.12.3,<5.0.0)"]
 pdfexport = ["reportlab (>=4.2.5,<5.0.0)"]
@@ -211,6 +211,23 @@ files = [
 
 [package.dependencies]
 six = ">=1.5"
+
+[[package]]
+name = "pyvulnerabilitylookup"
+version = "2.1.0"
+description = "Python CLI and module for Vulnerability Lookup"
+optional = false
+python-versions = "<4.0,>=3.10"
+files = [
+    {file = "pyvulnerabilitylookup-2.1.0-py3-none-any.whl", hash = "sha256:03ceb06363e280ba0a695b1e1688567d7aa7a73fbfc8af0561902f0ccba136dd"},
+    {file = "pyvulnerabilitylookup-2.1.0.tar.gz", hash = "sha256:d2b8989e136ae478db4502731f2e52a45987e8f2ba71250f2116ec32878d0d7e"},
+]
+
+[package.dependencies]
+requests = ">=2.32.3,<3.0.0"
+
+[package.extras]
+docs = ["Sphinx (>=8.1.3,<9.0.0)"]
 
 [[package]]
 name = "requests"
@@ -343,4 +360,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "6d28c653443a392375c61dd1c0ca17b23d3eb24c948354bafda994db8f183154"
+content-hash = "47664523983c5188f10ea50d5c010ca8c1056523695b459ec0a9946e16ebec7c"
