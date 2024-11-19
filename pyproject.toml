@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "VulnerabilityLookupSighting"
-version = "0.3.0"
+version = "0.4.0"
 description = "A client that retrieves vulnerability observations from a MISP server and pushes them to a Vulnerability Lookup instance."
 authors = ["Cédric Bonhomme <cedric@cedricbonhomme.org>"]
 license = "GPL-3.0-or-later"
@@ -9,7 +9,7 @@ readme = "README.md"
 homepage = "https://github.com/MISP/VulnerabilityLookupSighting"
 repository = "https://github.com/MISP/VulnerabilityLookupSighting"
 
-keywords = ["vulnerability", "cve", "sighting", "observations", "MISP"]
+keywords = ["vulnerability", "cve", "sighting", "observations", "MISP", "PyVulnerabilityLookup"]
 
 classifiers = [
     "Development Status :: 5 - Production/Stable",
