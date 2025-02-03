@@ -1,16 +1,39 @@
-[tool.poetry]
+[build-system]
+requires = ["poetry-core>=2.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[project]
 name = "VulnerabilityLookupSighting"
 version = "0.4.1"
 description = "A client that retrieves vulnerability observations from a MISP server and pushes them to a Vulnerability Lookup instance."
-authors = ["Cédric Bonhomme <cedric@cedricbonhomme.org>"]
+authors = [
+    {name = "Cédric Bonhomme", email = "cedric.bonhomme@circl.lu"}
+]
 license = "GPL-3.0-or-later"
 readme = "README.md"
+keywords = ["vulnerability", "cve", "sighting", "observations", "MISP", "PyVulnerabilityLookup"]
+# classifieres is dynamic because we want to create Python classifiers automatically
+dynamic = ["classifiers"]
 
+requires-python = "^3.10"
+dependencies = [
+    "pyvulnerabilitylookup (>=2.2.0)",
+    "pymisp (>=2.5.2)"
+]
+
+
+[project.urls]
 homepage = "https://github.com/MISP/VulnerabilityLookupSighting"
 repository = "https://github.com/MISP/VulnerabilityLookupSighting"
 
-keywords = ["vulnerability", "cve", "sighting", "observations", "MISP", "PyVulnerabilityLookup"]
 
+[project.scripts]
+VulnerabilityLookupSighting = "vulnerabilitylookupsighting.publish:main"
+
+
+[tool.poetry]
+requires-poetry = ">=2.0"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
@@ -24,21 +47,6 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"
 ]
-
-
-[tool.poetry.scripts]
-VulnerabilityLookupSighting = "vulnerabilitylookupsighting.publish:main"
-
-
-[tool.poetry.dependencies]
-python = "^3.10"
-pymisp = "^2.5.2"
-pyvulnerabilitylookup = "^2.1.0"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
 
 
 [tool.mypy]
