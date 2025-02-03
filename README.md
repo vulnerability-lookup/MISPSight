@@ -1,9 +1,7 @@
-# Vulnerability-Lookup Sighting
+# VulnerabilityLookupSighting
 
 A client that retrieves vulnerability observations from a [MISP](https://github.com/MISP/MISP) server and pushes them to a
-[Vulnerability Lookup](https://github.com/cve-search/vulnerability-lookup) instance.
-
-Similar to [FediVuln](https://github.com/CIRCL/FediVuln) which is using the Fediverse as a source of observations.
+[Vulnerability-Lookup](https://github.com/vulnerability-lookup/vulnerability-lookup) instance.
 
 
 ## Installation
@@ -39,9 +37,9 @@ options:
 
 ```bash
 $ VulnerabilityLookupSighting
-Querying MISP...
+Querying MISP…
 Query completed successfully.
-Pushing sightings to Vulnerability Lookup...
+Pushing sightings to Vulnerability Lookup…
 ```
 
 [https://github.com/MISP/VulnerabilityLookupSighting](https://github.com/MISP/VulnerabilityLookupSighting)
@@ -49,10 +47,10 @@ Pushing sightings to Vulnerability Lookup...
 
 ## License
 
-[Vulnerability-Lookup Sighting](https://github.com/MISP/VulnerabilityLookupSighting) is licensed under
+[VulnerabilityLookupSighting](https://github.com/MISP/VulnerabilityLookupSighting) is licensed under
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html)
 
 ~~~
-Copyright (c) 2024 Computer Incident Response Center Luxembourg (CIRCL)
-Copyright (C) 2024 Cédric Bonhomme - https://github.com/cedricbonhomme
+Copyright (c) 2024-2025 Computer Incident Response Center Luxembourg (CIRCL)
+Copyright (C) 2024-2025 Cédric Bonhomme - https://github.com/cedricbonhomme
 ~~~
