@@ -1,4 +1,4 @@
-# VulnerabilityLookupSighting
+# MISPSight
 
 A client that retrieves vulnerability observations from a [MISP](https://github.com/MISP/MISP) server and pushes them to a
 [Vulnerability-Lookup](https://github.com/vulnerability-lookup/vulnerability-lookup) instance.
@@ -12,18 +12,18 @@ It's easy to [install](https://github.com/pypa/pipx?tab=readme-ov-file#on-linux)
 
 
 ```bash
-$ pipx install VulnerabilityLookupSighting
-$ export VulnerabilityLookupSighting_CONFIG=~/conf.py
+$ pipx install MISPSight
+$ export MISPSight_CONFIG=~/conf.py
 ```
 
-The configuration should be defined in a Python file (e.g., ``~/.conf.py``).
-You must then set an environment variable (``VulnerabilityLookupSighting``) with the full path to this file.
+The configuration should be defined in a Python file (e.g., ``~/.MISPSight/conf.py``).
+You must then set an environment variable (``MISPSight_CONFIG``) with the full path to this file.
 
 
 ## Usage
 
 ```bash
-$ VulnerabilityLookupSighting --help
+$ MISPSight --help
 usage: FediVuln-Stream [-h] [--since SINCE]
 
 Allows access to the streaming API.
@@ -36,18 +36,16 @@ options:
 ### Publishing sightings to Vulnerability Lookup
 
 ```bash
-$ VulnerabilityLookupSighting
+$ MISPSight
 Querying MISP…
 Query completed successfully.
 Pushing sightings to Vulnerability Lookup…
 ```
 
-[https://github.com/MISP/VulnerabilityLookupSighting](https://github.com/MISP/VulnerabilityLookupSighting)
-
 
 ## License
 
-[VulnerabilityLookupSighting](https://github.com/MISP/VulnerabilityLookupSighting) is licensed under
+[MISPSight](https://github.com/vulnerability-lookup/MISPSight) is licensed under
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html)
 
 ~~~

@@ -33,4 +33,4 @@ eproject.cfg
 # Log files:
 *.log
 
-vulnerabilitylookupsighting/conf.py
+mispsight/conf.py

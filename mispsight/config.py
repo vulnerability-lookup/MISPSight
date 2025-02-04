@@ -20,8 +20,8 @@ conf = None
 try:
     conf = load_config(
         os.environ.get(
-            "VulnerabilityLookupSighting_CONFIG",
-            "./vulnerabilitylookupsighting/conf_sample.py",
+            "MISPSight_CONFIG",
+            "./mispsight/conf_sample.py",
         )
     )
 except Exception as exc:

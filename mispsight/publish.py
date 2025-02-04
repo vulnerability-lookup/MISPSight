@@ -4,7 +4,7 @@ import re
 from pymisp import PyMISP
 from pyvulnerabilitylookup import PyVulnerabilityLookup
 
-from vulnerabilitylookupsighting import config
+from mispsight import config
 
 
 def remove_case_insensitive_duplicates(input_list: list[str]) -> list[str]:
