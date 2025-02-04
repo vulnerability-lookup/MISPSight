@@ -33,13 +33,13 @@ options:
   --since SINCE  Maximum timestamp of the MISP attribute.
 ```
 
-### Publishing sightings to Vulnerability Lookup
+### Publishing sightings to Vulnerability-Lookup
 
 ```bash
 $ MISPSight
 Querying MISP…
 Query completed successfully.
-Pushing sightings to Vulnerability Lookup…
+Pushing sightings to Vulnerability-Lookup…
 ```
 
 

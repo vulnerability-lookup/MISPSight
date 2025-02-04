@@ -17,8 +17,8 @@ def remove_case_insensitive_duplicates(input_list: list[str]) -> list[str]:
 
 
 def push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids):
-    """Create a sighting from a MISP attribute and push it to the Vulnerability Lookup instance."""
-    print("Pushing sightings to Vulnerability Lookup…")
+    """Create a sighting from a MISP attribute and push it to the Vulnerability-Lookup instance."""
+    print("Pushing sightings to Vulnerability-Lookup…")
     vuln_lookup = PyVulnerabilityLookup(
         config.vulnerability_lookup_base_url, token=config.vulnerability_auth_token
     )
@@ -40,20 +40,20 @@ def push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids):
             "creation_timestamp": creation_timestamp,
         }
 
-        # Post the JSON to Vulnerability Lookup
+        # Post the JSON to Vulnerability-Lookup
         try:
             r = vuln_lookup.create_sighting(sighting=sighting)
             if "message" in r:
                 print(r["message"])
         except Exception as e:
             print(
-                f"Error when sending POST request to the Vulnerability Lookup server:\n{e}"
+                f"Error when sending POST request to the Vulnerability-Lookup server:\n{e}"
             )
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        prog="FediVuln-Stream", description="Allows access to the streaming API."
+        prog="MISPSight", description="Allows access to the streaming API."
     )
     parser.add_argument(
         "--since",
