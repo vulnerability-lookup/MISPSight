@@ -5,6 +5,7 @@ from pymisp import PyMISP
 from pyvulnerabilitylookup import PyVulnerabilityLookup
 
 from mispsight import config
+from mispsight.utils import heartbeat, report_error
 
 
 def remove_case_insensitive_duplicates(input_list: list[str]) -> list[str]:
@@ -30,6 +31,9 @@ def push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids):
         else:
             creation_timestamp = attribute.timestamp
         if not creation_timestamp:
+            report_error(
+                "warning", "push_sighting_to_vulnerability_lookup: no creation_stamp"
+            )
             continue
 
         # Create the sighting
@@ -45,15 +49,27 @@ def push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids):
             r = vuln_lookup.create_sighting(sighting=sighting)
             if "message" in r:
                 print(r["message"])
+                if "duplicate" in r["message"]:
+                    level = "info"
+                else:
+                    level = "warning"
+                report_error(
+                    level, f"push_sighting_to_vulnerability_lookup: {r['message']}"
+                )
         except Exception as e:
             print(
                 f"Error when sending POST request to the Vulnerability-Lookup server:\n{e}"
+            )
+            report_error(
+                "error",
+                f"Error when sending POST request to the Vulnerability-Lookup server: {e}",
             )
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        prog="MISPSight", description="Allows access to the streaming API."
+        prog="MISPSight",
+        description="A client that retrieves vulnerability observations from a MISP server and pushes them to a Vulnerability-Lookup instance.",
     )
     parser.add_argument(
         "--since",
@@ -62,6 +78,9 @@ def main() -> None:
     )
 
     arguments = parser.parse_args()
+
+    # Sends a heartbeat when the script launches
+    heartbeat()
 
     misp = PyMISP(config.misp_url, config.misp_key, config.misp_verifycert)
     print("Querying MISP…")

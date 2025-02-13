@@ -37,3 +37,12 @@ misp_verifycert = conf.misp_verifycert
 
 vulnerability_lookup_base_url = conf.vulnerability_lookup_base_url
 vulnerability_auth_token = conf.vulnerability_auth_token
+
+
+try:
+    heartbeat_enabled = True
+    valkey_host = conf.valkey_host
+    valkey_port = conf.valkey_port
+    expiration_period = conf.expiration_period
+except Exception:
+    heartbeat_enabled = False

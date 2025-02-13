@@ -5,27 +5,29 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "MISPSight"
-version = "0.4.2"
+version = "1.0.0"
 description = "A client that retrieves vulnerability observations from a MISP server and pushes them to a Vulnerability-Lookup instance."
 authors = [
     {name = "Cédric Bonhomme", email = "cedric.bonhomme@circl.lu"}
 ]
 license = "GPL-3.0-or-later"
 readme = "README.md"
-keywords = ["Vulnerability-Lookup", "vulnerability", "cve", "sighting", "observations", "MISP", "PyVulnerabilityLookup"]
-# classifieres is dynamic because we want to create Python classifiers automatically
+keywords = ["Vulnerability-Lookup", "vulnerability", "cve", "sighting", "observations", "MISP"]
+
 dynamic = ["classifiers"]
 
-requires-python = ">=3.10"
+requires-python = ">=3.10,<4.0"
 dependencies = [
     "pyvulnerabilitylookup (>=2.2.0)",
-    "pymisp (>=2.5.2)"
+    "pymisp (>=2.5.2)",
+    "valkey (>=6.1.0,<7.0.0)"
 ]
 
 
 [project.urls]
 Homepage = "https://github.com/vulnerability-lookup/MISPSight"
 Repository = "https://github.com/vulnerability-lookup/MISPSight"
+Changelog = "https://github.com/vulnerability-lookup/MISPSight/blob/main/CHANGELOG.md"
 
 
 [project.scripts]
