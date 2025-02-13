@@ -22,8 +22,10 @@ def heartbeat(key="process_heartbeat_MISPSight") -> None:
         print(f"Heartbeat error: {e}")
 
 
-def report_error(level="warning", message="", key="process_logs_MISPSight") -> None:
+def log(level="warning", message="", key="process_logs_MISPSight") -> None:
     """Reports an error or warning in the Valkey datastore."""
+    if not config.heartbeat_enabled:
+        return
     timestamp = time.time()
     log_entry = {"timestamp": timestamp, "level": level, "message": message}
     try:

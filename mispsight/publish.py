@@ -5,7 +5,7 @@ from pymisp import PyMISP
 from pyvulnerabilitylookup import PyVulnerabilityLookup
 
 from mispsight import config
-from mispsight.utils import heartbeat, report_error
+from mispsight.monitoring import heartbeat, log
 
 
 def remove_case_insensitive_duplicates(input_list: list[str]) -> list[str]:
@@ -31,7 +31,7 @@ def push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids):
         else:
             creation_timestamp = attribute.timestamp
         if not creation_timestamp:
-            report_error(
+            log(
                 "warning", "push_sighting_to_vulnerability_lookup: no creation_stamp"
             )
             continue
@@ -53,14 +53,14 @@ def push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids):
                     level = "info"
                 else:
                     level = "warning"
-                report_error(
+                log(
                     level, f"push_sighting_to_vulnerability_lookup: {r['message']}"
                 )
         except Exception as e:
             print(
                 f"Error when sending POST request to the Vulnerability-Lookup server:\n{e}"
             )
-            report_error(
+            log(
                 "error",
                 f"Error when sending POST request to the Vulnerability-Lookup server: {e}",
             )
@@ -78,6 +78,9 @@ def main() -> None:
     )
 
     arguments = parser.parse_args()
+
+    # Log the launch of the script
+    log("info", "Starting MISPSight…")
 
     # Sends a heartbeat when the script launches
     heartbeat()
@@ -110,6 +113,9 @@ def main() -> None:
         vulnerability_ids = remove_case_insensitive_duplicates(vulnerability_ids)
         if vulnerability_ids:
             push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids)
+
+    # Log the end of the script
+    log("info", "MISPSight execution completed.")
 
 
 if __name__ == "__main__":
