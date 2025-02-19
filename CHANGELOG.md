@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.0.2 (2025-02-19)
+
+Improved monitoring.
+
+
 ## Release 1.0.1 (2025-02-13)
 
 Added logging for process start and end.
