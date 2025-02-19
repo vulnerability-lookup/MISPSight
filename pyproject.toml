@@ -50,6 +50,10 @@ classifiers = [
 ]
 
 
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.15.0"
+
+
 [tool.mypy]
 python_version = "3.13"
 check_untyped_defs = true
