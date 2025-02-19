@@ -49,7 +49,7 @@ def push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids):
             r = vuln_lookup.create_sighting(sighting=sighting)
             if "message" in r:
                 print(r["message"])
-                if "duplicate" in r["message"]:
+                if "duplicate" in r["message"].lower():
                     level = "info"
                 else:
                     level = "warning"
