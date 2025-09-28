@@ -36,10 +36,20 @@ def push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids):
             )
             continue
 
+        # Determine source string dynamically
+        attr_name = getattr(config, "source_attribute", "event_uuid")
+        attr_value = getattr(attribute, attr_name, None)
+
+        if not attr_value:
+            # Fallback if attribute doesn’t exist
+            attr_value = getattr(attribute, "event_uuid", "unknown")
+
+        source_prefix = getattr(config, "source_prefix", "MISP")
+
         # Create the sighting
         sighting = {
             "type": "seen",
-            "source": f"MISP/{attribute.event_uuid}",
+            "source": f"{source_prefix}/{attr_value}",
             "vulnerability": vuln,
             "creation_timestamp": creation_timestamp,
         }
