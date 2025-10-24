@@ -38,7 +38,16 @@ misp_verifycert = conf.misp_verifycert
 vulnerability_lookup_base_url = conf.vulnerability_lookup_base_url
 vulnerability_auth_token = conf.vulnerability_auth_token
 
+try:
+    source_prefix = conf.source_prefix
+except AttributeError:
+    source_prefix = "MISP"
 
+try:
+    source_attribute = conf.source_attribute
+except AttributeError:
+    source_attribute = "event_uuid"
+    
 try:
     heartbeat_enabled = True
     valkey_host = conf.valkey_host
