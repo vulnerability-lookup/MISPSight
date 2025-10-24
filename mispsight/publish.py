@@ -1,7 +1,7 @@
 import argparse
 import re
 
-from pymisp import PyMISP
+from pymisp import MISPAttribute, PyMISP
 from pyvulnerabilitylookup import PyVulnerabilityLookup
 
 from mispsight import config
@@ -113,6 +113,8 @@ def main() -> None:
     )
     print("Query completed successfully.")
     for attribute in attributes:
+        if not isinstance(attribute, MISPAttribute):
+            continue
         matches = vulnerability_pattern.findall(attribute.value)
         vulnerability_ids = [
             match for match_tuple in matches for match in match_tuple if match
