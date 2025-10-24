@@ -31,9 +31,7 @@ def push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids):
         else:
             creation_timestamp = attribute.timestamp
         if not creation_timestamp:
-            log(
-                "warning", "push_sighting_to_vulnerability_lookup: no creation_stamp"
-            )
+            log("warning", "push_sighting_to_vulnerability_lookup: no creation_stamp")
             continue
 
         # Determine source string dynamically
@@ -63,9 +61,7 @@ def push_sighting_to_vulnerability_lookup(attribute, vulnerability_ids):
                     level = "info"
                 else:
                     level = "warning"
-                log(
-                    level, f"push_sighting_to_vulnerability_lookup: {r['message']}"
-                )
+                log(level, f"push_sighting_to_vulnerability_lookup: {r['message']}")
         except Exception as e:
             print(
                 f"Error when sending POST request to the Vulnerability-Lookup server:\n{e}"

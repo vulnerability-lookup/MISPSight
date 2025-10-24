@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 
-"""This module is responsible for loading the configuration variables.
-"""
+"""This module is responsible for loading the configuration variables."""
 
 import importlib.util
 import os
@@ -47,7 +46,7 @@ try:
     source_attribute = conf.source_attribute
 except AttributeError:
     source_attribute = "event_uuid"
-    
+
 try:
     heartbeat_enabled = True
     valkey_host = conf.valkey_host
